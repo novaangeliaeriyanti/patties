@@ -1,4 +1,5 @@
-import About from "@/sections/about";
+import About from "@/sections/About";
+import Flavors from "@/sections/Flavors";
 import { Header } from "@/sections/Header";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Header />
       <About />
+      <Flavors />
     </>
   );
 }

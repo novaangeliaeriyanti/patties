@@ -38,6 +38,22 @@
     .card{
         @apply p-10 border border-[#f1f1f1] rounded-3xl shadow-[0_7px_14px_#eaeaea] max-w-xs w-full;
     }
+
+    @keyframes bounce-vert {
+        0% {
+          transform: translateY(-33%); /* Posisi awal (naik) */
+        }
+        50% {
+          transform: translateY(10%); /* Posisi tengah (bergerak naik) */
+        }
+        100% {
+          transform: translateY(-33%); /* Kembali ke posisi awal */
+        }
+      }
+
+    .animate-bounce-vert {
+        animation: bounce-vert 3s ease-in-out infinite;
+    }
 }
 
 html {
