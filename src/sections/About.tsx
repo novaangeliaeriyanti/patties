@@ -8,10 +8,10 @@ import { upDown } from "../../animations"
 const About = () => {
   return (
     <section className='relative bg-[#A5DFF9] h-screen flex justify-center items-center overflow-x-clip'>
-            <div className='text-center text-3xl flex flex-col gap-3 items-center z-40 lg:text-5xl'>
-                <Logo className="inline-block"/>
-                <h2>Just Delicious</h2>
-                <h2>Baked Corn Puffs.</h2>
+            <div className='text-center flex flex-col gap-3 items-center z-40'>
+                <Logo className="inline-block text-3xl md:text-5xl lg:text-7xl"/>
+                <h2 className='text-3xl md:text-4xl lg:text-6xl'>Just Delicious</h2>
+                <h2 className='text-3xl md:text-4xl lg:text-6xl'>Baked Corn Puffs.</h2>
             </div>
                 <motion.img 
                   src={Strawberry.src} 
@@ -300,8 +300,8 @@ const About = () => {
                   height={120} 
                   className='absolute hidden md:block transform bottom-0 md:translate-x-64 md:-translate-y-64 rotate-[60deg]'
                   animate={{
-                    translateY:[-256,-256],
-                    x:[256,255],
+                    translateY:[-256,-246],
+                    x:[256,245],
                     rotate:[60,60]
                   }}
                   transition={{
@@ -383,6 +383,7 @@ const About = () => {
                     ease:'easeInOut'
                   }}
                 />
+                {/* LARGE */}
                 <motion.img 
                   src={Strawberry.src} 
                   alt='Strawberry' 

@@ -11,14 +11,14 @@ const config: Config = {
     screens: {
       sm: "375px",
       md: "768px",
-      lg: "1200px",
+      lg: "1280px",
     },
     extend: {
       container: {
         center: true,
         padding: {
           DEFAULT: "20px",
-          lg: "80px",
+          lg: "24px",
         },
       },
     },
