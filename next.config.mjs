@@ -27,6 +27,9 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    domains: ['res.cloudinary.com'], // Menambahkan domain gambar eksternal
+  },
 
   // ...other config
 };

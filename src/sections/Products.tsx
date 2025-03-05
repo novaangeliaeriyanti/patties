@@ -1,10 +1,13 @@
 "use client"
 import Image from 'next/image'
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import React, { useEffect, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import Product from '@/assets/products.png'
 import Star from '@/assets/star.webp'
 import Button from '@/components/button'
+import sprite from "@/assets/sprite.svg";
 
 const products = [
     {
@@ -25,6 +28,12 @@ const livechat = [{
     phoneNumber : "6285732857020",
   }
 ]
+
+const images = [
+    Product,
+    Product,
+    Product,
+  ];
 
 const Products = () => {
     const [size, setSize] = useState(products[0].size)
@@ -71,13 +80,31 @@ const Products = () => {
     console.log('size: ', size)
     
   return (
-    <section className='bg-[##FCC99] py-16'>
+    <section id="shop" className='bg-[##FCC99] py-16'>
         <div className='container'>
             <div className='flex flex-col gap-8'>
                 <h2 className='text-center py-12 text-3xl md:text-4xl lg:text-6xl'>Whats are you waiting for? Buy some salad today!</h2>
-                <div className='flex flex-col lg:flex-row justify-center gap-8'>
+                <div className='flex py-16 px-5 lg:px-8 flex-col lg:flex-row justify-center gap-8 bg-[#E8C6DE] border-4 border-black rounded-3xl lg:border-[6px] '>
                     <div className='flex-1 flex justify-center'>
-                        <Image src={Product} alt='Product Image' width={200} height={200} className='rounded-3xl w-full h-fit'/>
+                        {/* <Image src={Product} alt='Product Image' width={200} height={200} className='rounded-3xl w-full h-fit'/> */}
+                        <div className="box ">
+                            <Carousel 
+                                useKeyboardArrows={true}
+                                autoPlay 
+                                axis="horizontal" 
+                                infiniteLoop
+                                showStatus={false}
+                                showThumbs={true} // Show thumbnails below the carousel
+                                // thumbWidth={100} // Set thumbnail width
+                                // thumbHeight={100} // Set thumbnail height
+                            >
+                                {images.map((URL, index) => (
+                                <div className="slide border-4 border-black rounded-3xl lg:border-[6px] h-full">
+                                    <Image alt="sample_file" src={URL} key={index} width={200} height={200}  className='rounded-2xl h-full'/>
+                                </div>
+                                ))}
+                            </Carousel>
+                        </div>
                     </div>
                     <div className='flex-1 flex flex-col gap-8 lg:gap-12'>
                         <div className='flex flex-col gap-2'>
@@ -98,7 +125,7 @@ const Products = () => {
                             <div className='flex flex-row gap-2 flex-wrap'>
                                 {
                                     products?.map((item,index)=>(
-                                        <button onClick={()=>onChangeSize(item)} key={index} className={twMerge("uppercase py-2 px-4 bg-[#E8C6DE] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl transition-all duration-500 ease-out hover:bg-[#E8C6DE] hover:rounded-[1.5rem] focus:bg-[#A5DFF9]", size === item?.size && "bg-[#A5DFF9] rounded-[1.5rem]")}>
+                                        <button onClick={()=>onChangeSize(item)} key={index} className={twMerge("uppercase py-2 px-4 bg-[#ffffff] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl transition-all duration-500 ease-out hover:bg-[#E8C6DE] hover:rounded-[1.5rem] focus:bg-[#A5DFF9]", size === item?.size && "bg-[#A5DFF9] rounded-[1.5rem]")}>
                                             {item?.size}
                                         </button>
                                     ))
@@ -109,10 +136,10 @@ const Products = () => {
                             <div className='flex flex-col gap-2'>
                                 <span className='text-xl md:text-2xl lg:text-3xl'>Quantity</span>
                                 <div className='flex flex-row gap-2 flex-wrap'>
-                                    <button disabled={quantity <= 1} onClick={()=>onReduceQuantity()} className="py-2 px-4 bg-[#A5DFF9] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl">
+                                    <button disabled={quantity <= 1} onClick={()=>onReduceQuantity()} className="py-2 px-4 bg-[#CCFFCC] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl">
                                         -
                                     </button>
-                                    <input value={quantity} onChange={(e)=>onChangeQuantity(e)} className="inline-flex justify-center w-20 max-w-40 py-2 px-4 bg-[#FFFFFF] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl"/>
+                                    <input value={quantity} onChange={(e)=>onChangeQuantity(e)} className="inline-flex justify-center items-center w-20 max-w-40 py-2 px-4 bg-[#FFFFFF] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl"/>
                                     <button onClick={()=>onAddQuantity()} className="py-2 px-4 bg-[#CCFFCC] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl">
                                         +
                                     </button>
