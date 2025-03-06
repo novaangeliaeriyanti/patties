@@ -1,6 +1,7 @@
 "use client";
 import { createContext, useContext, useState, useEffect } from "react";
 const TranslationContext = createContext();
+
 export function TranslationProvider({ children }) {
   const [translations, setTranslations] = useState({});
   const [lang, setLang] = useState("en");

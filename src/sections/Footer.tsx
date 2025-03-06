@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import Image from "next/image";
 import Logo from "@/assets/logocamilanjworo.png"
 import Instagram from "@/assets/instagram.svg"
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import dynamic from "next/dynamic";
 import { useTranslation } from "@/translations/provider";
 

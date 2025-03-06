@@ -4,7 +4,8 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import React, { useEffect, useState } from 'react'
 import { twMerge } from 'tailwind-merge';
-import Product from '@/assets/products.png'
+import ProductMedium from '@/assets/products_medium.png'
+import ProductSmall from '@/assets/products_small.png'
 import Star from '@/assets/star.webp'
 import Button from '@/components/button'
 import { useTranslation } from "@/translations/provider";
@@ -31,9 +32,9 @@ const livechat = [{
 ]
 
 const images = [
-    Product,
-    Product,
-    Product,
+    ProductMedium,
+    ProductSmall,
+    ProductMedium,
   ];
 
 const Products = () => {

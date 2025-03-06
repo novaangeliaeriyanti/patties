@@ -3,7 +3,6 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
 import { TranslationProvider } from "../translations/provider";
-
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

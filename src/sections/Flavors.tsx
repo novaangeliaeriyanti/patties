@@ -1,11 +1,8 @@
 "use client"
 import React from 'react'
-import Product from '@/assets/cinnamon.webp'
 import Medium from '@/assets/medium.png'
 import Small from '@/assets/small.png'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
-import Button from '@/components/button'
 import { useTranslation } from "@/translations/provider";
 
 const Flavors = () => {
