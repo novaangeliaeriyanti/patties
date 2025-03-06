@@ -20,8 +20,8 @@ export default function RootLayout({
     <html lang="en" className="relative">
       <body className={twMerge(dmSans.className, "antialiased bg-[#EAEEFE]")}>
         <div className="font-[Arial Rounded MT Bold] font-bold">
-        <TranslationProvider>
-          {children}
+          <TranslationProvider>
+            {children}
           </TranslationProvider>
         </div>
       </body>

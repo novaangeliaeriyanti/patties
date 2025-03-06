@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-// import { i18n } from './next-i18next.config.js'
 
 const nextConfig = {
   i18n: {
@@ -32,9 +31,6 @@ const nextConfig = {
     fileLoaderRule.exclude = /\.svg$/i;
 
     return config;
-  },
-  images: {
-    domains: ['res.cloudinary.com'], // Menambahkan domain gambar eksternal
   },
 
   // ...other config
