@@ -9,19 +9,45 @@ import Melon from "@/assets/melon.png"
 import Kiwi from "@/assets/kiwi.png"
 import Image from 'next/image'
 import { motion } from "framer-motion"
-import { upDown } from "../../animations"
 import { useTranslation } from "@/translations/provider";
 
 const About = () => {
   const { translations } = useTranslation();
 
   return (
-    <section className='relative bg-[#A5DFF9] h-screen flex justify-center items-center overflow-x-clip'>
+    <div className='relative bg-[#A5DFF9] h-screen flex justify-center items-center overflow-x-clip'>
             <div className='text-center flex flex-col gap-3 items-center z-40'>
-                <Image src={LogoCamilanJworo} alt='Logo Camilan Jworo' width={300} height={200} className="h-52 w-52 text-3xl md:h-60 md:w-60 lg:h-72 lg:w-72"/>
-                <h2 className='w-2/3 lg:w-1/2 text-3xl md:text-4xl lg:text-6xl'>{translations.about_description}</h2>
-                {/* <h2 className='text-3xl md:text-4xl lg:text-6xl'>Baked Corn Puffs.</h2> */}
+                <motion.img 
+                  src={LogoCamilanJworo.src} 
+                  alt='Logo Camilan Jworo' 
+                  width={300} 
+                  height={200} 
+                  className="h-52 w-52 text-3xl md:h-60 md:w-60 lg:h-72 lg:w-72"
+                  initial={{opacity:0, scale:0.8}}
+                  whileInView={{
+                    opacity:1,
+                    scale:[0, 1.3, 1],
+                    transition:{
+                      duration:0.5
+                    }
+                  }}
+                />
+                <motion.h2 
+                  className='w-2/3 lg:w-1/2 text-3xl md:text-4xl lg:text-6xl'
+                  initial={{y:"100%", opacity:0}}
+                  animate={{y:"0%", opacity:1}}
+                  transition={{duration:0.8}}
+                >
+                  {translations.about_description}
+                </motion.h2>
             </div>
+            <motion.div 
+              className='absolute h-full w-full'
+              transition={{delay:0.4, duration: 0.5, ease: "easeOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
                 <motion.img 
                   src={Strawberry.src} 
                   alt='Strawberry' 
@@ -29,14 +55,14 @@ const About = () => {
                   height={180} 
                   className='absolute transform -translate-y-3/4 top-0 md:hidden lg:hidden rotate-[15deg]'
                   animate={{
-                    y:[-150,-140,-150],
-                    rotate:[15,15]
+                    y: [-150, -140, -150],
+                    rotate: [15, 15],
                   }}
                   transition={{
-                    repeat:Infinity,
-                    repeatType:'mirror',
-                    duration:3,
-                    ease:'easeInOut'
+                    repeat: Infinity,
+                    repeatType: 'mirror', 
+                    duration: 3,
+                    ease: 'easeInOut'
                   }}
                 />
                 <motion.img 
@@ -464,7 +490,8 @@ const About = () => {
                     ease:'easeInOut'
                   }}
                 />
-    </section>
+           </motion.div>     
+      </div>
   )
 }
 

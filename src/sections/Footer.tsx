@@ -18,22 +18,24 @@ export const Footer = () => {
   ), [])
 
   return (
-    <motion.footer 
+    <footer 
       id="footer" 
       className="bg-[#FFCC99] text-[#010D3E] py-10"
-      initial={{opacity:0, scale:0.8}}
-      whileInView={{
-        opacity:1,
-        scale:1,
-        transition:{
-          duration:0.5
-        }
-      }}
-      viewport={{
-        once:true,
-      }}
     >
-      <div className="container">
+      <motion.div 
+        className="container"
+        initial={{opacity:0, scale:0.8}}
+        whileInView={{
+          opacity:1,
+          scale:1,
+          transition:{
+            duration:0.5
+          }
+        }}
+        viewport={{
+          once:true,
+        }}
+      >
         <div className="flex py-12 flex-col gap-8 md:justify-between md:flex-row lg:flex-row lg:justify-between">
           <div className="flex-1 flex gap-8 flex-col">
             <Image src={Logo} height={80} alt="Logo" className="h-24 w-24"/>
@@ -52,13 +54,26 @@ export const Footer = () => {
                 
             </div>
           </div>
-          <div className="flex-1">
+          <motion.div 
+            className="flex-1"
+            whileInView={{
+              opacity:1,
+              scale: [0, 1.3, 1],
+              transition:{
+                delay:0.5,
+                duration:0.5
+              }
+            }}
+            viewport={{
+              once:true,
+            }}
+          >
             <span className="font-bold text-xl md:text-2xl lg:text-3xl">{translations.footer_location}</span>
             <Map position={[-7.7671891,112.1421889]} zoom={12} />
-          </div>
+          </motion.div>
         </div>
         <div className="flex justify-center items-center text-xl md:text-3xl lg:text-3xl">🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓</div>
-      </div>
-    </motion.footer>
+      </motion.div>
+    </footer>
   );
 };

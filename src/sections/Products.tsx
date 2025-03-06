@@ -8,6 +8,7 @@ import Product from '@/assets/products.png'
 import Star from '@/assets/star.webp'
 import Button from '@/components/button'
 import { useTranslation } from "@/translations/provider";
+import { motion } from "framer-motion"
 
 const products = [
     {
@@ -87,11 +88,52 @@ const Products = () => {
     <section id="shop" className='bg-[##FCC99] py-16'>
         <div className='container'>
             <div className='flex flex-col gap-8'>
-                <h2 className='text-center py-12 text-3xl md:text-4xl lg:text-6xl'>{translations.products_title}</h2>
-                <div className='flex py-16 px-5 lg:px-8 flex-col lg:flex-row justify-center gap-8 bg-[#E8C6DE] border-4 border-black rounded-3xl lg:border-[6px] '>
+                <motion.h2 
+                    className='text-center py-12 text-3xl md:text-4xl lg:text-6xl'
+                    initial={{opacity:0, scale:0.8}}
+                    whileInView={{
+                      opacity:1,
+                      scale:1,
+                      transition:{
+                        duration:0.5
+                      }
+                    }}
+                    viewport={{
+                      once:true,
+                    }}
+                >
+                    {translations.products_title}
+                </motion.h2>
+                <motion.div 
+                    className='flex py-16 px-5 lg:px-8 flex-col lg:flex-row justify-center gap-8 bg-[#E8C6DE] border-4 border-black rounded-3xl lg:border-[6px]'
+                    initial={{opacity:0, scale:0.8}}
+                    whileInView={{
+                      opacity:1,
+                      scale: [0, 1.3, 1],
+                      transition:{
+                        duration:0.5
+                      }
+                    }}
+                    viewport={{
+                      once:true,
+                    }}
+                >
                     <div className='flex-1 flex justify-center'>
-                        {/* <Image src={Product} alt='Product Image' width={200} height={200} className='rounded-3xl w-full h-fit'/> */}
-                        <div className="box ">
+                        <motion.div 
+                            className="box"
+                            initial={{opacity:0, scale:0.8}}
+                            whileInView={{
+                              opacity:1,
+                              scale: [0, 1.3, 1],
+                              transition:{
+                                delay:0.5,
+                                duration:0.5
+                              }
+                            }}
+                            viewport={{
+                              once:true,
+                            }}
+                        >
                             <Carousel 
                                 useKeyboardArrows={true}
                                 autoPlay 
@@ -106,7 +148,7 @@ const Products = () => {
                                 </div>
                                 ))}
                             </Carousel>
-                        </div>
+                        </motion.div>
                     </div>
                     <div className='flex-1 flex flex-col gap-8 lg:gap-12'>
                         <div className='flex flex-col gap-2'>
@@ -127,9 +169,25 @@ const Products = () => {
                             <div className='flex flex-row gap-2 flex-wrap'>
                                 {
                                     products?.map((item,index)=>(
-                                        <button onClick={()=>onChangeSize(item)} key={index} className={twMerge("uppercase py-2 px-4 bg-[#ffffff] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl transition-all duration-500 ease-out hover:bg-[#E8C6DE] hover:rounded-[1.5rem] focus:bg-[#A5DFF9]", size === item?.size && "bg-[#A5DFF9] rounded-[1.5rem]")}>
+                                        <motion.button 
+                                            onClick={()=>onChangeSize(item)} 
+                                            key={index} 
+                                            className={twMerge("uppercase py-2 px-4 bg-[#ffffff] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl transition-all duration-500 ease-out hover:bg-[#E8C6DE] hover:rounded-[1.5rem] focus:bg-[#A5DFF9]", size === item?.size && "bg-[#A5DFF9] rounded-[1.5rem]")}
+                                            initial={{opacity:0, scale:0.8}}
+                                            whileInView={{
+                                              opacity:1,
+                                              scale: [0, 1.3, 1],
+                                              transition:{
+                                                delay:0.5,
+                                                duration:0.5
+                                              }
+                                            }}
+                                            viewport={{
+                                              once:true,
+                                            }}
+                                        >
                                             {translations?.products_pack?.[item?.size]}
-                                        </button>
+                                        </motion.button>
                                     ))
                                 }
                             </div>
@@ -138,29 +196,100 @@ const Products = () => {
                             <div className='flex flex-col gap-2'>
                                 <span className='text-xl md:text-2xl lg:text-3xl'>{translations.products_quantity}</span>
                                 <div className='flex flex-row gap-2 flex-wrap'>
-                                    <button disabled={quantity <= 1} onClick={()=>onReduceQuantity()} className="py-2 px-4 bg-[#CCFFCC] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl">
+                                    <motion.button 
+                                        disabled={quantity <= 1} 
+                                        onClick={()=>onReduceQuantity()} 
+                                        className="py-2 px-4 bg-[#CCFFCC] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl"
+                                        initial={{opacity:0, scale:0.8}}
+                                        whileInView={{
+                                          opacity:1,
+                                          scale: [0, 1.3, 1],
+                                          transition:{
+                                            delay:0.8,
+                                            duration:0.5
+                                          }
+                                        }}
+                                        viewport={{
+                                          once:true,
+                                        }}
+                                    >
                                         -
-                                    </button>
-                                    <input value={quantity} onChange={(e)=>onChangeQuantity(e)} className="inline-flex justify-center items-center w-20 max-w-40 py-2 px-4 bg-[#FFFFFF] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl"/>
-                                    <button onClick={()=>onAddQuantity()} className="py-2 px-4 bg-[#CCFFCC] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl">
+                                    </motion.button>
+                                    <motion.input 
+                                        value={quantity} 
+                                        onChange={(e)=>onChangeQuantity(e)} 
+                                        className="inline-flex justify-center items-center w-20 max-w-40 py-2 px-4 bg-[#FFFFFF] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl"
+                                        initial={{opacity:0, scale:0.8}}
+                                        whileInView={{
+                                          opacity:1,
+                                          scale: [0, 1.3, 1],
+                                          transition:{
+                                            delay:0.8,
+                                            duration:0.5
+                                          }
+                                        }}
+                                        viewport={{
+                                          once:true,
+                                        }}
+                                    />
+                                    <motion.button 
+                                        onClick={()=>onAddQuantity()} 
+                                        className="py-2 px-4 bg-[#CCFFCC] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl"
+                                        initial={{opacity:0, scale:0.8}}
+                                        whileInView={{
+                                          opacity:1,
+                                          scale: [0, 1.3, 1],
+                                          transition:{
+                                            delay:0.8,
+                                            duration:0.5
+                                          }
+                                        }}
+                                        viewport={{
+                                          once:true,
+                                        }}
+                                    >
                                         +
-                                    </button>
+                                    </motion.button>
                                 </div>
                             </div>
                             <div className='flex flex-col gap-2'>
                                 <span className='text-xl md:text-2xl lg:text-3xl'>{translations.products_price}</span>
                                 <div className='flex flex-row gap-2 flex-wrap'>
-                                    <span className="inline-flex justify-center w-48 max-w-56 py-2 px-4 bg-[#FFFFFF] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl">
+                                    <motion.span 
+                                        className="inline-flex justify-center w-48 max-w-56 py-2 px-4 bg-[#FFFFFF] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl"
+                                        initial={{opacity:0, scale:0.8}}
+                                            whileInView={{
+                                              opacity:1,
+                                              scale: [0, 1.3, 1],
+                                              transition:{
+                                                delay:0.8,
+                                                duration:0.5
+                                              }
+                                            }}
+                                            viewport={{
+                                              once:true,
+                                            }}
+                                    >
                                         Rp. {priceTotal}
-                                    </span>
+                                    </motion.span>
                                 </div>
                             </div>
                         </div>
-                        <div className='w-full flex justify-center'>
+                        <motion.div 
+                            className='w-full flex justify-center'
+                            initial={{opacity:0, scale:0.8}}
+                            whileInView={{
+                              opacity:1,
+                              scale: [0, 1.3, 1],
+                              transition:{
+                                duration:0.5
+                              }
+                            }}
+                        >
                             <Button onTap={handleBuy} text={translations.products_button} />
-                        </div>
+                        </motion.div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     </section>

@@ -13,10 +13,36 @@ const Flavors = () => {
 
   return (
     <section className='bg-[#A5DFF9] py-16'>
-            <div className='container text-center py-12 flex flex-col gap-3 items-center z-40 text-3xl md:text-4xl lg:text-6xl'>
+            <motion.div 
+              className='container text-center py-12 flex flex-col gap-3 items-center z-40 text-3xl md:text-4xl lg:text-6xl'
+              initial={{opacity:0, scale:0.8}}
+              whileInView={{
+                opacity:1,
+                scale:1,
+                transition:{
+                  duration:0.5
+                }
+              }}
+              viewport={{
+                once:true,
+              }}
+            >
                 <h2>{translations.flavors_description}</h2>
-            </div> 
-            <div className='flex overflow-hidden'>
+            </motion.div> 
+            <motion.div 
+              className='flex overflow-hidden'
+              initial={{opacity:0, scale:0.8}}
+              whileInView={{
+                opacity:1,
+                scale:1,
+                transition:{
+                  duration:0.5
+                }
+              }}
+              viewport={{
+                once:true,
+              }}
+            >
               <motion.div 
                 className='flex p-8 flex-none'
                 animate={{
@@ -222,10 +248,20 @@ const Flavors = () => {
                     }}
                   />
               </motion.div>
-            </div>
-            <div className='flex justify-center py-12'>
+            </motion.div>
+            <motion.div 
+              className='flex justify-center py-12'
+              initial={{opacity:0, scale:0.8}}
+              whileInView={{
+                opacity:1,
+                scale:[0, 1.3, 1],
+                transition:{
+                  duration:0.5
+                }
+              }}
+            >
               <a href="#shop" className="text-center w-3/4 max-w-[36rem] md:w-1/2 lg:w-full py-4 px-8 bg-[#F9F7B9] border-4 border-black rounded-3xl gap-3 lg:border-[9px] text-3xl md:text-4xl lg:text-6xl transition-all duration-500 ease-out hover:bg-[#E8C6DE] hover:rounded-[2.5rem]">{translations.flavors_button}</a>
-            </div>
+            </motion.div>
     </section>
   )
 }
