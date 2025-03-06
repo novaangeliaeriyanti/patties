@@ -418,8 +418,8 @@ const About = () => {
                 <motion.img 
                   src={Kiwi.src} 
                   alt='Strawberry' 
-                  width={250} 
-                  height={250} 
+                  width={100} 
+                  height={100} 
                   className='absolute hidden lg:block transform left-0 bottom-0 translate-x-80 -translate-y-52 rotate-[-35deg]'
                   animate={{
                     translateY:[-208,-198],
@@ -436,8 +436,8 @@ const About = () => {
                 <motion.img 
                   src={Mango.src}
                   alt='Strawberry' 
-                  width={250} 
-                  height={250} 
+                  width={100} 
+                  height={100} 
                   className='absolute hidden lg:block transform lg:-translate-y-28 lg:left-96 translate-x-64 bottom-0 rotate-[35deg]'
                   animate={{
                     translateY:[-112,-102],
@@ -454,8 +454,8 @@ const About = () => {
                 <motion.img 
                   src={Melon.src} 
                   alt='Strawberry' 
-                  width={250} 
-                  height={250} 
+                  width={150} 
+                  height={150} 
                   className='absolute hidden lg:block transform lg:translate-y-56 left-96 translate-x-28 top-0 rotate-[15deg]'
                   animate={{
                     translateY:[224,214],
@@ -472,8 +472,8 @@ const About = () => {
                 <motion.img 
                   src={Mango.src} 
                   alt='Strawberry' 
-                  width={250} 
-                  height={250} 
+                  width={150} 
+                  height={150} 
                   className='absolute hidden lg:block transform lg:translate-y-8 right-96 -translate-x-72 top-0 rotate-[-40deg]'
                   animate={{
                     translateY:[32,22],
