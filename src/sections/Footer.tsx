@@ -69,7 +69,7 @@ export const Footer = () => {
             }}
           >
             <span className="font-bold text-xl md:text-2xl lg:text-3xl">{translations.footer_location}</span>
-            <Map position={[-7.7671891,112.1421889]} zoom={12} />
+            <Map center={[-7.7671891,112.1421889]} zoom={12} />
           </motion.div>
         </div>
         <div className="flex justify-center items-center text-xl md:text-3xl lg:text-3xl">🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓</div>
