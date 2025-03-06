@@ -151,7 +151,7 @@ const Products = () => {
                             </Carousel>
                         </motion.div>
                     </div>
-                    <div className='flex-1 flex flex-col gap-8 lg:gap-12'>
+                    <div className='flex-1 flex flex-col gap-8 lg:gap-12 text-center justify-center items-center lg:text-start lg:justify-start lg:items-start'>
                         <div className='flex flex-col gap-2'>
                             <h2 className='text-3xl md:text-4xl lg:text-6xl'>Fruit Salad</h2>
                             <div className='flex flex-row'>
@@ -167,7 +167,7 @@ const Products = () => {
                         </p>
                         <div className='flex flex-col gap-2'>
                             <span className='text-xl md:text-2xl lg:text-3xl'>{translations.products_size}</span>
-                            <div className='flex flex-row gap-2 flex-wrap'>
+                            <div className='flex flex-row gap-2 flex-wrap justify-center items-center md:justify-start lg:justify-start'>
                                 {
                                     products?.map((item,index)=>(
                                         <motion.button 
