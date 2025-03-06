@@ -1,8 +1,10 @@
 "use client"
 import React from 'react'
 import { motion } from "framer-motion"
-
+import { useTranslation } from "../translations/provider";
 const Tagline = () => {
+    const { translations } = useTranslation();
+
   return (
     <section className='bg-[#E8C6DE]'>
         <div className='flex flex-wrap overflow-hidden'>
@@ -18,18 +20,18 @@ const Tagline = () => {
                     ease: "linear",
                 }}
             >
-                <h2 className='text-3xl md:text-5xl lg:text-6xl'>Boost Your MOOD!! Ngga Bikin Gendut 😊</h2>
-                <h2 className='text-3xl md:text-5xl lg:text-6xl'>Boost Your MOOD!! Ngga Bikin Gendut 😊</h2>
-                <h2 className='text-3xl md:text-5xl lg:text-6xl'>Boost Your MOOD!! Ngga Bikin Gendut 😊</h2>
-                <h2 className='text-3xl md:text-5xl lg:text-6xl'>Boost Your MOOD!! Ngga Bikin Gendut 😊</h2>
-                <h2 className='text-3xl md:text-5xl lg:text-6xl'>Boost Your MOOD!! Ngga Bikin Gendut 😊</h2>
-                <h2 className='text-3xl md:text-5xl lg:text-6xl'>Boost Your MOOD!! Ngga Bikin Gendut 😊</h2>
-                <h2 className='text-3xl md:text-5xl lg:text-6xl'>Boost Your MOOD!! Ngga Bikin Gendut 😊</h2>
-                <h2 className='text-3xl md:text-5xl lg:text-6xl'>Boost Your MOOD!! Ngga Bikin Gendut 😊</h2>
-                <h2 className='text-3xl md:text-5xl lg:text-6xl'>Boost Your MOOD!! Ngga Bikin Gendut 😊</h2>
-                <h2 className='text-3xl md:text-5xl lg:text-6xl'>Boost Your MOOD!! Ngga Bikin Gendut 😊</h2>
-                <h2 className='text-3xl md:text-5xl lg:text-6xl'>Boost Your MOOD!! Ngga Bikin Gendut 😊</h2>
-                <h2 className='text-3xl md:text-5xl lg:text-6xl'>Boost Your MOOD!! Ngga Bikin Gendut 😊</h2>
+                <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
+                <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
+                <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
+                <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
+                <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
+                <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
+                <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
+                <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
+                <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
+                <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
+                <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
+                <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
             </motion.div>
         </div>
     </section>

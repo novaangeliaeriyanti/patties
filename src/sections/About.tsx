@@ -1,17 +1,26 @@
 "use client"
 import React from 'react'
 import Logo from '@/assets/logo.svg'
+import LogoCamilanJworo from '@/assets/logocamilanjworo.png'
 import Strawberry from "@/assets/strawberry.png"
+import Mango from "@/assets/mango.png"
+import Grape from "@/assets/grape.png"
+import Melon from "@/assets/melon.png"
+import Kiwi from "@/assets/kiwi.png"
 import Image from 'next/image'
 import { motion } from "framer-motion"
 import { upDown } from "../../animations"
+import { useTranslation } from "@/translations/provider";
+
 const About = () => {
+  const { translations } = useTranslation();
+
   return (
     <section className='relative bg-[#A5DFF9] h-screen flex justify-center items-center overflow-x-clip'>
             <div className='text-center flex flex-col gap-3 items-center z-40'>
-                <Logo className="inline-block text-3xl md:text-5xl lg:text-7xl"/>
-                <h2 className='text-3xl md:text-4xl lg:text-6xl'>Just Delicious</h2>
-                <h2 className='text-3xl md:text-4xl lg:text-6xl'>Baked Corn Puffs.</h2>
+                <Image src={LogoCamilanJworo} alt='Logo Camilan Jworo' width={300} height={200} className="h-52 w-52 text-3xl md:h-60 md:w-60 lg:h-72 lg:w-72"/>
+                <h2 className='w-2/3 lg:w-1/2 text-3xl md:text-4xl lg:text-6xl'>{translations.about_description}</h2>
+                {/* <h2 className='text-3xl md:text-4xl lg:text-6xl'>Baked Corn Puffs.</h2> */}
             </div>
                 <motion.img 
                   src={Strawberry.src} 
@@ -31,7 +40,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Melon.src} 
                   alt='Strawberry' 
                   width={180} 
                   height={180} 
@@ -64,7 +73,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Grape.src} 
                   alt='Strawberry' 
                   width={80} 
                   height={80} 
@@ -100,7 +109,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Kiwi.src} 
                   alt='Strawberry' 
                   width={180} 
                   height={180} 
@@ -135,7 +144,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Grape.src} 
                   alt='Strawberry' 
                   width={100} 
                   height={100} 
@@ -153,7 +162,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Mango.src} 
                   alt='Strawberry' 
                   width={120} 
                   height={120} 
@@ -172,7 +181,7 @@ const About = () => {
                 /> 
                 {/* MEDIUM */}
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Melon.src} 
                   alt='Strawberry' 
                   width={180} 
                   height={180} 
@@ -207,7 +216,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Kiwi.src} 
                   alt='Strawberry' width={120} 
                   height={120} className='absolute hidden md:block transform md:-translate-y-50 top-0 md:-translate-x-64'
                   animate={{
@@ -223,7 +232,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Grape.src} 
                   alt='Strawberry' 
                   width={80} 
                   height={80} 
@@ -258,7 +267,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Melon.src} 
                   alt='Strawberry' 
                   width={60} 
                   height={60} 
@@ -294,7 +303,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Mango.src} 
                   alt='Strawberry' 
                   width={120} 
                   height={120} 
@@ -330,7 +339,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Grape.src} 
                   alt='Strawberry' 
                   width={120} 
                   height={120} 
@@ -348,7 +357,7 @@ const About = () => {
                   }}
                 /> 
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Kiwi.src} 
                   alt='Strawberry' 
                   width={180} 
                   height={180} 
@@ -366,7 +375,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Melon.src} 
                   alt='Strawberry' 
                   width={60} 
                   height={60} 
@@ -385,7 +394,7 @@ const About = () => {
                 />
                 {/* LARGE */}
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Kiwi.src} 
                   alt='Strawberry' 
                   width={120} 
                   height={120} 
@@ -402,7 +411,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src}
+                  src={Mango.src}
                   alt='Strawberry' 
                   width={120} 
                   height={120} 
@@ -420,7 +429,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Melon.src} 
                   alt='Strawberry' 
                   width={180} 
                   height={180} 
@@ -438,7 +447,7 @@ const About = () => {
                   }}
                 />
                 <motion.img 
-                  src={Strawberry.src} 
+                  src={Mango.src} 
                   alt='Strawberry' 
                   width={200} 
                   height={200} 

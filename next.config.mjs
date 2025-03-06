@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
+// import { i18n } from './next-i18next.config.js'
+
 const nextConfig = {
+  i18n: {
+    locales: ["en", "in"],
+    defaultLocale: "en",
+  },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
