@@ -9,7 +9,7 @@ const Advantages = () => {
   return (
     <section className='bg-[#F9F7B9] py-16'>
       <motion.h2 
-        className='text-center py-12 flex flex-col gap-3 items-center z-40 text-3xl md:text-4xl lg:text-6xl'
+        className='text-center font-bold py-12 flex flex-col gap-3 items-center z-40 text-2xl md:text-3xl lg:text-5xl'
         initial={{opacity:0, scale:0.8}}
         whileInView={{
           opacity:1,

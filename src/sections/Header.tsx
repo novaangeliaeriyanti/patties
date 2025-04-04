@@ -44,7 +44,7 @@ export const Header = () => {
           animate={{y:"0%", opacity:1}}
           transition={{duration:0.8}}
         >
-            <div className="font-bold text-3xl md:text-5xl lg:text-7xl">{translations.greeting}</div>
+            <div className="font-bold text-2xl md:text-xl lg:text-4xl">{translations.greeting}</div>
             <motion.div 
               className="flex px-2 bg-[#F9F7B9] border-4 border-black rounded-3xl gap-3 items-center lg:border-[6px]"
               initial={{opacity:0, scale:0.8}}
@@ -59,7 +59,7 @@ export const Header = () => {
               
             >
                 <Menu className="h-10 w-10 md:hidden lg:hidden" onClick={()=>onClickMenu()}/>
-                <div className="text-2xl hidden p-3 md:block lg:block lg:text-4xl">
+                <div className="text-xl font-bold hidden p-3 md:block lg:block lg:text-3xl">
                   <a href='#shop' className="mr-8">Shop</a>
                   <a href='#footer' className="mr-8">Store</a>
                   <button className="relative uppercase" onClick={() => onClickChooseLang()}>{lang}</button>
@@ -71,9 +71,9 @@ export const Header = () => {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                     >
-                      <div className="flex flex-col gap-2">
-                        <button disabled={lang === 'en'} onClick={()=>{lang === 'in' && onChooseLang('en')}} className={twMerge("lg:text-2xl px-4 py-2",lang === 'en' && "text-gray-500 hover:none", lang !== 'en' && "hover:text-blue-500")}>ENGLISH</button>
-                        <button disabled={lang === 'in'} onClick={()=>{lang === 'en' && onChooseLang('in')}} className={twMerge("lg:text-2xl px-4 py-2",lang === 'in' && "text-gray-500 hover:none", lang !== 'in' && "hover:text-blue-500")}>INDONESIA</button>
+                      <div className="flex flex-col items-start">
+                        <button disabled={lang === 'en'} onClick={()=>{lang === 'in' && onChooseLang('en')}} className={twMerge("lg:text-2xl px-4 pt-1",lang === 'en' && "text-gray-500 hover:none", lang !== 'en' && "hover:text-blue-500")}>ENGLISH</button>
+                        <button disabled={lang === 'in'} onClick={()=>{lang === 'en' && onChooseLang('in')}} className={twMerge("lg:text-2xl px-4 py-1",lang === 'in' && "text-gray-500 hover:none", lang !== 'in' && "hover:text-blue-500")}>INDONESIA</button>
                       </div>
                   </motion.div>
                   )}

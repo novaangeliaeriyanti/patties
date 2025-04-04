@@ -10,6 +10,7 @@ import Star from '@/assets/star.webp'
 import Button from '@/components/button'
 import { useTranslation } from "@/translations/provider";
 import { motion } from "framer-motion"
+import { formatCurrency } from '@/hooks/usevalidate';
 
 const products = [
     {
@@ -70,13 +71,26 @@ const Products = () => {
     const handleBuy = () => {
         let message = ''
         if(lang === 'en'){
-            message = `Hello, I want to order Salad with ${size} size ${quantity} cup`
+            message = `Hello, I want to order Salad with ${translations?.products_pack?.[size]} size ${quantity} cup`
         }else{
-            message = `Hallo, saya ingin order Salad size ${size} ${quantity} cup`
+            message = `Hallo, saya ingin order Salad ukuran ${translations?.products_pack?.[size]} ${quantity} cup`
         }
         const whatsappUrl = `https://wa.me/${livechat[0]?.phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, "_blank");
-      };
+    };
+    
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+      const allowedKeys = [
+        "Backspace",
+        "Delete",
+        "ArrowLeft",
+        "ArrowRight",
+      ];
+    
+      if (!/\d/.test(e.key) && !allowedKeys.includes(e.key)) {
+        e.preventDefault();
+      }
+    };
 
     useEffect(() => {
       setSize(products[0].size)
@@ -90,7 +104,7 @@ const Products = () => {
         <div className='container'>
             <div className='flex flex-col gap-8'>
                 <motion.h2 
-                    className='text-center py-12 text-3xl md:text-4xl lg:text-6xl'
+                    className='text-center font-bold py-12 text-2xl md:text-3xl lg:text-5xl'
                     initial={{opacity:0, scale:0.8}}
                     whileInView={{
                       opacity:1,
@@ -153,7 +167,7 @@ const Products = () => {
                     </div>
                     <div className='flex-1 flex flex-col gap-8 lg:gap-12 text-center justify-center items-center lg:text-start lg:justify-start lg:items-start'>
                         <div className='flex flex-col gap-2'>
-                            <h2 className='text-3xl md:text-4xl lg:text-6xl'>Fruit Salad</h2>
+                            <h2 className='text-2xl font-bold md:text-3xl lg:text-5xl'>Fruit Salad</h2>
                             <div className='flex flex-row'>
                                 <Image src={Star} alt='Star Image' className='h-10 w-10'/>
                                 <Image src={Star} alt='Star Image' className='h-10 w-10'/>
@@ -166,7 +180,7 @@ const Products = () => {
                            {translations.products_description}
                         </p>
                         <div className='flex flex-col gap-2'>
-                            <span className='text-xl md:text-2xl lg:text-3xl'>{translations.products_size}</span>
+                            <span className='text-xl font-bold md:text-2xl lg:text-3xl'>{translations.products_size}</span>
                             <div className='flex flex-row gap-2 flex-wrap justify-center items-center md:justify-start lg:justify-start'>
                                 {
                                     products?.map((item,index)=>(
@@ -195,7 +209,7 @@ const Products = () => {
                         </div>
                         <div className='flex flex-col gap-8 md:flex-row lg:flex-row md:justify-between lg:justify-between'>
                             <div className='flex flex-col gap-2'>
-                                <span className='text-xl md:text-2xl lg:text-3xl'>{translations.products_quantity}</span>
+                                <span className='text-xl font-bold md:text-2xl lg:text-3xl'>{translations.products_quantity}</span>
                                 <div className='flex flex-row gap-2 flex-wrap'>
                                     <motion.button 
                                         disabled={quantity <= 1} 
@@ -219,8 +233,9 @@ const Products = () => {
                                     <motion.input 
                                         value={quantity} 
                                         onChange={(e)=>onChangeQuantity(e)} 
-                                        className="inline-flex justify-center items-center w-20 max-w-40 py-2 px-4 bg-[#FFFFFF] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl"
+                                        className="inline-flex text-center justify-center items-center w-20 max-w-40 py-2 px-4 bg-[#FFFFFF] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl"
                                         initial={{opacity:0, scale:0.8}}
+                                        onKeyDown={handleKeyDown}
                                         whileInView={{
                                           opacity:1,
                                           scale: [0, 1.3, 1],
@@ -254,7 +269,7 @@ const Products = () => {
                                 </div>
                             </div>
                             <div className='flex flex-col gap-2'>
-                                <span className='text-xl md:text-2xl lg:text-3xl'>{translations.products_price}</span>
+                                <span className='text-xl font-bold md:text-2xl lg:text-3xl'>{translations.products_price}</span>
                                 <div className='flex flex-row gap-2 flex-wrap'>
                                     <motion.span 
                                         className="inline-flex justify-center w-48 max-w-56 py-2 px-4 bg-[#FFFFFF] border-4 border-black rounded-xl lg:rounded-2xl gap-3 lg:border-[6px] text-base md:text-lg lg:text-xl"
@@ -271,7 +286,7 @@ const Products = () => {
                                               once:true,
                                             }}
                                     >
-                                        Rp. {priceTotal}
+                                        {formatCurrency(priceTotal)}
                                     </motion.span>
                                 </div>
                             </div>

@@ -11,7 +11,7 @@ const Flavors = () => {
   return (
     <section className='bg-[#A5DFF9] py-16'>
             <motion.div 
-              className='container text-center py-12 flex flex-col gap-3 items-center z-40 text-3xl md:text-4xl lg:text-6xl'
+              className='container font-bold text-center py-12 flex flex-col gap-3 items-center z-40 text-2xl md:text-3xl lg:text-5xl'
               initial={{opacity:0, scale:0.8}}
               whileInView={{
                 opacity:1,
@@ -257,7 +257,7 @@ const Flavors = () => {
                 }
               }}
             >
-              <a href="#shop" className="text-center w-3/4 max-w-[36rem] md:w-1/2 lg:w-full py-4 px-8 bg-[#F9F7B9] border-4 border-black rounded-3xl gap-3 lg:border-[9px] text-3xl md:text-4xl lg:text-6xl transition-all duration-500 ease-out hover:bg-[#E8C6DE] hover:rounded-[2.5rem]">{translations.flavors_button}</a>
+              <a href="#shop" className="text-center font-bold w-3/4 max-w-[36rem] md:w-1/2 lg:w-full py-4 px-8 bg-[#F9F7B9] border-4 border-black rounded-3xl gap-3 lg:border-[9px] text-2xl md:text-4xl lg:text-5xl transition-all duration-500 ease-out hover:bg-[#E8C6DE] hover:rounded-[2.5rem]">{translations.flavors_button}</a>
             </motion.div>
     </section>
   )

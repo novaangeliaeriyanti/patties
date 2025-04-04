@@ -72,7 +72,7 @@ export const Footer = () => {
             <Map center={[-7.7671891,112.1421889]} zoom={12} />
           </motion.div>
         </div>
-        <div className="flex justify-center items-center text-xl md:text-3xl lg:text-3xl">🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓</div>
+        <div className="flex justify-center items-center text-xl md:text-3xl lg:text-3xl">🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓🍓</div>
       </motion.div>
     </footer>
   );

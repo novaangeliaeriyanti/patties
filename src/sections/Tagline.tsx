@@ -19,18 +19,18 @@ const Tagline = () => {
                         ease: "linear",
                     }}
                 >
-                    <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
-                    <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
-                    <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
-                    <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
-                    <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
-                    <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
-                    <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
-                    <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
-                    <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
-                    <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
-                    <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
-                    <h2 className='text-3xl md:text-5xl lg:text-6xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
                 </motion.div>
             </div>
         </section>

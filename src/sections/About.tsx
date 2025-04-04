@@ -33,7 +33,7 @@ const About = () => {
                   }}
                 />
                 <motion.h2 
-                  className='w-2/3 lg:w-1/2 text-3xl md:text-4xl lg:text-6xl'
+                  className='w-2/3 lg:w-1/2 text-2xl font-bold md:text-3xl lg:text-5xl'
                   initial={{y:"100%", opacity:0}}
                   animate={{y:"0%", opacity:1}}
                   transition={{duration:0.8}}

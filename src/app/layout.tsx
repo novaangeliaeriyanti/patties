@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
 import { TranslationProvider } from "../translations/provider";
-const dmSans = DM_Sans({ subsets: ["latin"] });
+const quicksand = Quicksand({ subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Camilan Jworo",
@@ -17,12 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="relative">
-      <body className={twMerge(dmSans.className, "antialiased bg-[#EAEEFE]")}>
-        <div className="font-[Arial Rounded MT Bold] font-bold">
+      <body className={twMerge(quicksand.className, "antialiased bg-[#EAEEFE]")}>
           <TranslationProvider>
             {children}
           </TranslationProvider>
-        </div>
       </body>
     </html>
   );
