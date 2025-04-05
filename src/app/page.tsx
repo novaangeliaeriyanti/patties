@@ -18,7 +18,7 @@ export default function Home() {
       <Advantages2 />
       <Advantages3 />
       <Tagline />     
-      <Flavors />
+      {/* <Flavors /> */}
       <Footer />
     </>
   );
