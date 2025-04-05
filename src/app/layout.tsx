@@ -6,8 +6,8 @@ import { TranslationProvider } from "../translations/provider";
 const quicksand = Quicksand({ subsets: ["latin"]});
 
 export const metadata: Metadata = {
-  title: "Camilan Jworo",
-  description: "Camilan Jworo",
+  title: "Patties",
+  description: "Smash Burger",
 };
 
 export default function RootLayout({

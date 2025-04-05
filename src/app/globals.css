@@ -4,7 +4,7 @@
 
 @layer components{
     .product-flavors{
-        @apply h-72 w-auto md:h-96 lg:h-96
+        @apply h-40 w-auto md:h-40 lg:h-52
     }
 }
 

@@ -5,10 +5,10 @@ import { useTranslation } from "../translations/provider";
 const Tagline = () => {
     const { translations } = useTranslation();
     return (
-        <section className='bg-[#E8C6DE]'>
+        <section className='bg-red'>
             <div className='flex flex-wrap overflow-hidden'>
                 <motion.div 
-                    className='flex gap-12 flex-none p-4 text-white'
+                    className='flex gap-12 flex-none p-2 text-mayo font-mono'
                     animate= {{
                         translateX: "-50%"
                     }}
@@ -19,18 +19,18 @@ const Tagline = () => {
                         ease: "linear",
                     }}
                 >
-                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
-                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
-                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
-                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
-                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
-                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
-                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
-                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
-                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
-                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
-                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
-                    <h2 className='text-xl font-bold md:text-3xl lg:text-4xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-xl lg:text-xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-xl lg:text-xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-xl lg:text-xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-xl lg:text-xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-xl lg:text-xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-xl lg:text-xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-xl lg:text-xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-xl lg:text-xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-xl lg:text-xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-xl lg:text-xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-xl lg:text-xl'>{translations.tagline}</h2>
+                    <h2 className='text-xl font-bold md:text-xl lg:text-xl'>{translations.tagline}</h2>
                 </motion.div>
             </div>
         </section>

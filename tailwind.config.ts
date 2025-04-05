@@ -21,6 +21,13 @@ const config: Config = {
           lg: "24px",
         },
       },
+      colors: {
+        red:'#E4201C',
+        mayo:'#EDE7D1',
+        yellow:'#FCC846',
+        orange:'#EE7D46',
+        brown: '#7C371F'
+      }
     },
   },
   plugins: [],

@@ -1,5 +1,7 @@
 import About from "@/sections/About";
 import Advantages from "@/sections/Advantages";
+import Advantages2 from "@/sections/Advantages2";
+import Advantages3 from "@/sections/Advantages3";
 import Flavors from "@/sections/Flavors";
 import { Footer } from "@/sections/Footer";
 import { Header } from "@/sections/Header";
@@ -12,10 +14,11 @@ export default function Home() {
       <Header />
       <About />
       <Flavors />
-      <Tagline />
       <Advantages />
-      <Tagline />
-      <Products />
+      <Advantages2 />
+      <Advantages3 />
+      <Tagline />     
+      <Flavors />
       <Footer />
     </>
   );

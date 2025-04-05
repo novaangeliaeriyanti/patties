@@ -10,14 +10,14 @@ export default function Map(props: any) {
   }
 
   return (
-    <div className="w-full h-60 md:h-96 lg:h-[450px] border-4 border-black rounded-3xl lg:border-[6px] overflow-hidden">
+    <div className="w-full h-60 md:h-96 lg:h-[450px] border-4 border-mayo rounded-3xl lg:border-[6px] overflow-hidden">
       <MapContainer {...props} scrollWheelZoom={false} style={{ height: "100%", width: "100%",zIndex: 1}}>
         <TileLayer
           {...tileLayerOptions}
         />
         <Marker position={props?.center}>
           <Popup>
-            Camilan Jworo
+            Patties Smashburger
           </Popup>
         </Marker>
       </MapContainer>

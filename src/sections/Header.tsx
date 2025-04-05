@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import Close from "@/assets/close.png"
 import { useTranslation } from "@/translations/provider";
 import { twMerge } from "tailwind-merge";
-
+import MayoPatties from "@/assets/mayo-patties.png"
 export const Header = () => {
   const { translations, changeLanguage, lang } = useTranslation();
   const [open, setOpen] = useState(false)
@@ -39,14 +39,15 @@ export const Header = () => {
   return (
     <header className='fixed z-50 w-full h-14'>
         <motion.div 
-          className="flex justify-between items-center p-6 lg:px-20"
+          className="flex bg-red text-mayo justify-between items-center p-3 lg:px-20"
           initial={{y:"-100%", opacity:0}}
           animate={{y:"0%", opacity:1}}
           transition={{duration:0.8}}
         >
-            <div className="font-bold text-2xl md:text-xl lg:text-4xl">{translations.greeting}</div>
+            {/* <div className="font-bold text-2xl md:text-xl lg:text-4xl">{translations.greeting}</div> */}
+            <Image src={MayoPatties} alt='Mayo Patties Icon' className='w-32'/>
             <motion.div 
-              className="flex px-2 bg-[#F9F7B9] border-4 border-black rounded-3xl gap-3 items-center lg:border-[6px]"
+              className="flex px-2 bg-red border-4 border-mayo rounded-3xl gap-2 items-center lg:border-[4px]"
               initial={{opacity:0, scale:0.8}}
               whileInView={{
                 opacity:1,
@@ -59,28 +60,28 @@ export const Header = () => {
               
             >
                 <Menu className="h-10 w-10 md:hidden lg:hidden" onClick={()=>onClickMenu()}/>
-                <div className="text-xl font-bold hidden p-3 md:block lg:block lg:text-3xl">
+                <div className="text-xl font-bold hidden p-3 md:block lg:block lg:text-xl">
                   <a href='#shop' className="mr-8">Shop</a>
                   <a href='#footer' className="mr-8">Store</a>
                   <button className="relative uppercase" onClick={() => onClickChooseLang()}>{lang}</button>
                   {choose && (
                     <motion.div 
-                      className="absolute right-0 mt-2 bg-[#F9F7B9] border-4 border-black rounded-3xl lg:border-[6px] shadow-lg"
+                      className="absolute right-0 mt-2 bg-red text-mayo border-4 border-mayo rounded-3xl lg:border-[4px] shadow-lg"
                       transition={{ duration: 0.5, ease: "easeOut" }}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                     >
                       <div className="flex flex-col items-start">
-                        <button disabled={lang === 'en'} onClick={()=>{lang === 'in' && onChooseLang('en')}} className={twMerge("lg:text-2xl px-4 pt-1",lang === 'en' && "text-gray-500 hover:none", lang !== 'en' && "hover:text-blue-500")}>ENGLISH</button>
-                        <button disabled={lang === 'in'} onClick={()=>{lang === 'en' && onChooseLang('in')}} className={twMerge("lg:text-2xl px-4 py-1",lang === 'in' && "text-gray-500 hover:none", lang !== 'in' && "hover:text-blue-500")}>INDONESIA</button>
+                        <button disabled={lang === 'en'} onClick={()=>{lang === 'in' && onChooseLang('en')}} className={twMerge("lg:text-xl px-4 pt-1",lang === 'en' && "text-brown hover:none", lang !== 'en' && "hover:text-mayo/60")}>ENGLISH</button>
+                        <button disabled={lang === 'in'} onClick={()=>{lang === 'en' && onChooseLang('in')}} className={twMerge("lg:text-xl px-4 py-1",lang === 'in' && "text-brown hover:none", lang !== 'in' && "hover:text-mayo/60")}>INDONESIA</button>
                       </div>
                   </motion.div>
                   )}
                 </div>
                 {open && (
                   <motion.div 
-                    className="sm:absolute top-0 left-0 w-full h-screen bg-[#F9F7B9] p-4 bg-opacity-90"
+                    className="sm:absolute top-0 left-0 w-full h-screen bg-red p-4 bg-opacity-90"
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
