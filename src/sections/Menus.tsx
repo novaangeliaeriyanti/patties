@@ -52,7 +52,7 @@ const Menus = () => {
   const { translations,lang } = useTranslation();
   
   return (
-    <section id="menus" className='bg-mayo py-16 px-4 md:px-10 lg:px-16'>
+    <section id="menus" className='bg-mayo py-16 px-4 md:px-10 lg:px-16 overflow-x-clip'>
         <motion.div 
             className='container text-brown font-bold text-center py-12 flex flex-col gap-3 items-center z-40 text-2xl md:text-3xl lg:text-5xl'
             initial={{opacity:0, scale:0.8}}
@@ -89,7 +89,7 @@ const Menus = () => {
                     MenuList?.map(item => (
                         <div className='flex flex-col gap-1 items-center w-full md:w-1/2 lg:w-1/3'>
                             <Image src={item?.url_image} alt={lang === 'en' ? item?.title_en : item?.title_fren} width={200} height={200} className='w-full lg:h-80'/>
-                            <div className='cursor-pointer font-bold uppercase border-[1px] border-red text-red p-2 rounded-md hover:text-brown'>{lang === 'en' ? item?.title_en : item?.title_fren}</div>
+                            <div className='cursor-pointer font-bold uppercase border-[1px] border-red text-red p-2 rounded-md hover:text-brown transition-all duration-300 ease-in-out'>{lang === 'en' ? item?.title_en : item?.title_fren}</div>
                         </div>
                     ))
                 }

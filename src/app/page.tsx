@@ -16,8 +16,8 @@ export default function Home() {
       <About />
       <Flavors />
       <Advantages />
-      <Advantages2 />
       <Advantages3 />
+      <Advantages2 />
       <Tagline />     
       <Menus />
       <Footer />

@@ -8,7 +8,7 @@ import Diamonds from '@/assets/diamonds.png'
 const Advantages = () => {
   const { translations } = useTranslation();
   return (
-    <section className='bg-mayo py-16'>
+    <section className='bg-mayo py-16 overflow-x-clip'>
       <motion.div 
         className='flex justify-center'
         initial={{opacity:0, scale:0.8}}
@@ -23,7 +23,7 @@ const Advantages = () => {
           once:true,
         }}
       >
-        <div className='flex flex-col lg:flex-row px-4'>
+        <div className='flex flex-col lg:flex-row'>
           <div className='flex lg:flex-col items-end justify-end'>
               <motion.h2 
               className='uppercase text-red text-end font-mono font-bold py-12 flex flex-col gap-3 items-start z-40 text-2xl md:text-5xl lg:text-8xl'

@@ -5,7 +5,7 @@ import { useTranslation } from "../translations/provider";
 const Tagline = () => {
     const { translations } = useTranslation();
     return (
-        <section className='bg-red'>
+        <section className='bg-red overflow-x-clip'>
             <div className='flex flex-wrap overflow-hidden'>
                 <motion.div 
                     className='flex gap-12 flex-none p-2 text-mayo font-mono'

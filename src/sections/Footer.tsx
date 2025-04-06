@@ -43,16 +43,19 @@ export const Footer = () => {
             <Image src={Logo} height={80} alt="Logo" className="h-24"/>
             <div className="inline-flex flex-col">
               <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">{translations.footer_address}</h2>
-              <span className="text-base md:text-lg lg:text-xl">Perumahan Griya Nagoya, Sambirejo, Pare, Kediri Regency, East Java 64226</span>
+              <span className="text-base md:text-lg lg:text-xl">983 Port Washington Blvd.Port Washington, NY 11050 - UNITED STATES</span>
+              <span className="text-base md:text-lg lg:text-xl">6301 Silver Dart Dr. Mississauga, ON L5P 1B2 - CANADA</span>
             </div>
             <div className="inline-flex flex-col">
               <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">{translations.footer_contact}</h2>
-              <span className="text-base md:text-lg lg:text-xl">085334920000 - LINDA MARIA JATISWORO</span>
+              <span className="text-base md:text-lg lg:text-xl">(516) 439-4736 - UNITED STATES</span>
+              <span className="text-base md:text-lg lg:text-xl">(416) 776-2345 - CANADA</span>
             </div>
-            <div className="inline-flex flex-col">
-                <a href="https://www.instagram.com/smashburger" target="_blank" rel="noopener" title="follow us on instagram">
-                <Instagram className="text-mayo fill-current w-12"/>
-                </a>               
+            <div className="inline-flex flex-col gap-1">
+              <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">{translations.footer_follow}</h2>
+              <a href="https://www.instagram.com/smashburger" target="_blank" rel="noopener" title="follow us on instagram">
+                <Instagram className="text-mayo fill-current"/>
+              </a>               
             </div>
           </div>
           <motion.div 

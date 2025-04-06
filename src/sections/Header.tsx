@@ -80,9 +80,9 @@ export const Header = () => {
             >
                 <Menu className="h-10 w-10 md:hidden lg:hidden" onClick={()=>onClickMenu()}/>
                 <div className="text-xl font-bold hidden p-3 md:block lg:block lg:text-xl">
-                  <a href='#menus' className="mr-8 hover:text-yellow">Menu</a>
+                  <a href='#menus' className="mr-8 hover:text-yellow transition-all duration-300 ease-in-out">Menu</a>
                   <button className="relative uppercase" onClick={() => onClickChooseLang()}>
-                    <div className="flex flex-row gap-1 items-center hover:text-yellow">
+                    <div className="flex flex-row gap-1 items-center hover:text-yellow transition-all duration-300 ease-in-out">
                       <Image src={lang === 'en' ? America : French} alt={lang} width={200} height={200} className="h-4 w-6 border-mayo border-[1px]" />
                       {lang}
                       <ChevronDown />
@@ -97,13 +97,13 @@ export const Header = () => {
                       exit={{ opacity: 0 }}
                     >
                       <div className="flex flex-col items-start p-1">
-                        <button disabled={lang === 'en'} onClick={()=>{lang === 'fren' && onChooseLang('en')}} className={twMerge("lg:text-xl px-4 pt-1",lang === 'en' && "text-brown hover:none", lang !== 'en' && "hover:text-yellow")}>
+                        <button disabled={lang === 'en'} onClick={()=>{lang === 'fren' && onChooseLang('en')}} className={twMerge("lg:text-xl px-4 pt-1",lang === 'en' && "text-brown hover:none", lang !== 'en' && "hover:text-yellow transition-all duration-300 ease-in-out")}>
                           <div className="flex flex-row gap-1 items-center">
                             <Image src={America} alt="America Flag" width={200} height={200} className="h-4 w-6 border-mayo border-[1px]" />
                             ENGLISH
                           </div>
                         </button>
-                        <button disabled={lang === 'fren'} onClick={()=>{lang === 'en' && onChooseLang('fren')}} className={twMerge("lg:text-xl px-4 py-1",lang === 'fren' && "text-brown hover:none", lang !== 'fren' && "hover:text-mayo/60")}>
+                        <button disabled={lang === 'fren'} onClick={()=>{lang === 'en' && onChooseLang('fren')}} className={twMerge("lg:text-xl px-4 py-1",lang === 'fren' && "text-brown hover:none", lang !== 'fren' && "hover:text-yellow transition-all duration-300 ease-in-out")}>
                           <div className="flex flex-row gap-1 items-center">
                             <Image src={French} alt="French Flag" width={200} height={200} className="h-4 w-6 border-mayo border-[1px]" />
                             FRENCH

@@ -8,7 +8,7 @@ import Diamonds from '@/assets/diamonds.png'
 const Advantages2 = () => {
   const { translations } = useTranslation();
   return (
-    <section className='bg-yellow pt-6'>
+    <section className='bg-yellow pt-6 overflow-x-clip'>
       <motion.div 
         className='flex justify-center'
         initial={{opacity:0, scale:0.8}}
