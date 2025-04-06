@@ -45,18 +45,7 @@ export const Footer = () => {
               <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">{translations.footer_address}</h2>
               <span className="text-base md:text-lg lg:text-xl">983 Port Washington Blvd.Port Washington, NY 11050 - UNITED STATES</span>
               <span className="text-base md:text-lg lg:text-xl">6301 Silver Dart Dr. Mississauga, ON L5P 1B2 - CANADA</span>
-            </div>
-            <div className="inline-flex flex-col">
-              <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">{translations.footer_contact}</h2>
-              <span className="text-base md:text-lg lg:text-xl">(516) 439-4736 - UNITED STATES</span>
-              <span className="text-base md:text-lg lg:text-xl">(416) 776-2345 - CANADA</span>
-            </div>
-            <div className="inline-flex flex-col gap-1">
-              <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">{translations.footer_follow}</h2>
-              <a href="https://www.instagram.com/smashburger" target="_blank" rel="noopener" title="follow us on instagram">
-                <Instagram className="text-mayo fill-current"/>
-              </a>               
-            </div>
+            </div>          
           </div>
           <motion.div 
             className="flex-1"
@@ -72,8 +61,19 @@ export const Footer = () => {
               once:true,
             }}
           >
-            {/* <span className="font-bold text-xl md:text-2xl lg:text-3xl">{translations.footer_location}</span> */}
-            {/* <Map center={[-7.7671891,112.1421889]} zoom={12} /> */}
+            <div className="flex py-12 flex-col gap-8">
+              <div className="inline-flex flex-col">
+                <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">{translations.footer_contact}</h2>
+                <span className="text-base md:text-lg lg:text-xl">(516) 439-4736 - UNITED STATES</span>
+                <span className="text-base md:text-lg lg:text-xl">(416) 776-2345 - CANADA</span>
+              </div>
+              <div className="inline-flex flex-col gap-1">
+                <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">{translations.footer_follow}</h2>
+                <a href="https://www.instagram.com/smashburger" target="_blank" rel="noopener" title="follow us on instagram">
+                  <Instagram className="text-mayo fill-current"/>
+                </a>               
+              </div>
+            </div>
           </motion.div>
         </div>
         <div className="flex justify-center">
