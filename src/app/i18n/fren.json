@@ -1,0 +1,26 @@
+{
+    "greeting": "BONJOUR",
+    "about_description": "Le Délice Inoubliable du Burger!",
+    "flavors_description": "Fromage Fondant, Viande Juteuse—Une Combinaison Parfaite à Chaque Bouchée",
+    "flavors_button": "COMMANDER NOTRE SALADE DE FRUITS",
+    "tagline": "Le Délice Inoubliable du Burger",
+    "advantages_title": "Fait avec des fruits frais",
+    "advantages2_title": "Les Shakes Classiques Cookies et Crème",
+    "advantages3_title": "Menus de forfait intéressantss",
+    "menus_title": "Le Carte",
+    "menus_notes":"Les options de menu peuvent varier en fonction de l'emplacement.",
+    "products_title": "Qu'attendez-vous ? Achetez votre salade maintenant !",
+    "products_description": "Savourez une salade de fruits frais de Camilan Jworo, préparée avec des fruits de qualité sélectionnés ! Chaque fruit est coupé à la minute pour rester frais et délicieux, sans utiliser de fruits en conserve. Arrosé de notre sauce crémeuse et savoureuse, et garni de fromage abondant qui rend le tout encore plus délicieux.",
+    "products_button": "COMMANDER MAINTENANT",
+    "products_size": "TAILLE DE L'EMBALLAGE",
+    "products_quantity": "QUANTITÉ",
+    "products_price": "PRIX",
+    "products_pack": {
+        "small": "petit",
+        "medium": "moyen",
+        "large": "grand"
+    },
+    "footer_address": "ADRESSE",
+    "footer_location": "EMPLACEMENT",
+    "footer_contact": "CONTACT"
+}

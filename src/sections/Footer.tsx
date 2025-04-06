@@ -51,9 +51,8 @@ export const Footer = () => {
             </div>
             <div className="inline-flex flex-col">
                 <a href="https://www.instagram.com/smashburger" target="_blank" rel="noopener" title="follow us on instagram">
-                <Instagram className="text-mayo fill-current" />
-                </a>
-                
+                <Instagram className="text-mayo fill-current w-12"/>
+                </a>               
             </div>
           </div>
           <motion.div 
@@ -70,23 +69,12 @@ export const Footer = () => {
               once:true,
             }}
           >
-            <span className="font-bold text-xl md:text-2xl lg:text-3xl">{translations.footer_location}</span>
-            <Map center={[-7.7671891,112.1421889]} zoom={12} />
+            {/* <span className="font-bold text-xl md:text-2xl lg:text-3xl">{translations.footer_location}</span> */}
+            {/* <Map center={[-7.7671891,112.1421889]} zoom={12} /> */}
           </motion.div>
         </div>
-        {/* <div className="flex justify-center items-center flex-row">
-          <Image src={BurgerWhite} height={64} width={64} alt="BurgerWhite" className="h-16 w-auto"/>
-          <Image src={BurgerWhite} height={64} width={64} alt="BurgerWhite" className="h-16 w-auto"/>
-          <Image src={BurgerWhite} height={64} width={64} alt="BurgerWhite" className="h-16 w-auto"/>
-          <Image src={BurgerWhite} height={64} width={64} alt="BurgerWhite" className="h-16 w-auto"/>
-          <Image src={BurgerWhite} height={64} width={64} alt="BurgerWhite" className="h-16 w-auto"/>
-          <Image src={BurgerWhite} height={64} width={64} alt="BurgerWhite" className="h-16 w-auto"/>
-          <Image src={BurgerWhite} height={64} width={64} alt="BurgerWhite" className="h-16 w-auto"/>
-          <Image src={BurgerWhite} height={64} width={64} alt="BurgerWhite" className="h-16 w-auto"/>
-          <Image src={BurgerWhite} height={64} width={64} alt="BurgerWhite" className="h-16 w-auto"/>
-        </div> */}
         <div className="flex justify-center">
-          <Image src={MayoLogo} height={200} width={200} alt="BurgerWhite" className="h-44 w-auto"/>
+          <Image src={MayoLogo} height={200} width={200} alt="BurgerWhite" className="h-20 w-auto"/>
         </div>
       </motion.div>
     </footer>

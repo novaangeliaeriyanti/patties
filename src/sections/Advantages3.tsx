@@ -23,7 +23,7 @@ const Advantages3 = () => {
           once:true,
         }}
       >
-        <div className='flex flex-col lg:flex-row'>
+        <div className='flex flex-col lg:flex-row px-4'>
           <div className='flex lg:flex-col items-end justify-start'>
               <motion.h2 
               className='uppercase text-yellow text-end font-mono font-bold py-12 flex flex-col gap-3 items-start z-40 text-2xl md:text-5xl lg:text-8xl'
@@ -39,8 +39,7 @@ const Advantages3 = () => {
                 once:true,
               }}
             >
-              {/* {translations.advantages_title} */}
-              Kids Meal Combo Package $5
+              {translations.advantages3_title}
             </motion.h2>
             <Image src={DiamondsYellow} alt='Diamonds Image' width={200} height={200} className='flex-1 hidden w-auto lg:block lg:h-12'/>
           </div>

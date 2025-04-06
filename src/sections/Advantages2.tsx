@@ -23,7 +23,7 @@ const Advantages2 = () => {
           once:true,
         }}
       >
-        <div className='flex flex-col lg:flex-row'>
+        <div className='flex flex-col lg:flex-row px-4'>
           <Image src={CookiesAndCream} alt='Cookies And Cream Image' width={200} height={200} className='h-42 w-auto md:h-[500px] lg:h-[400px]'/>
           <div className='flex lg:flex-col items-start justify-start'>
               <motion.h2 
@@ -40,7 +40,7 @@ const Advantages2 = () => {
                 once:true,
               }}
             >
-              {translations.advantages_title}
+              {translations.advantages2_title}
             </motion.h2>
             {/* <Image src={Diamonds} alt='Diamonds Image' width={200} height={200} className='flex-1 hidden h-24 w-auto lg:block lg:h-[100px]'/> */}
           </div>

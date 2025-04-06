@@ -7,10 +7,15 @@ import Close from "@/assets/close.png"
 import { useTranslation } from "@/translations/provider";
 import { twMerge } from "tailwind-merge";
 import MayoPatties from "@/assets/mayo-patties.png"
+import America from "@/assets/america.png"
+import French from "@/assets/prancis.png"
+import { ChevronDown } from "lucide-react"
+
 export const Header = () => {
   const { translations, changeLanguage, lang } = useTranslation();
   const [open, setOpen] = useState(false)
   const [choose, setChoose] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   const onClickMenu = () => {
       setOpen(!open)
@@ -26,6 +31,22 @@ export const Header = () => {
   }
 
   useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
+  useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -37,14 +58,13 @@ export const Header = () => {
   }, [open]);
 
   return (
-    <header className='fixed z-50 w-full h-14'>
+    <header className={`fixed z-50 w-full h-14 transition-all duration-30`}>
         <motion.div 
-          className="flex bg-red text-mayo justify-between items-center p-3 lg:px-20"
+          className={`flex justify-between items-center p-3 lg:px-20 ${isScrolled ? 'bg-red' : 'bg-transparent'} text-mayo`}
           initial={{y:"-100%", opacity:0}}
           animate={{y:"0%", opacity:1}}
           transition={{duration:0.8}}
         >
-            {/* <div className="font-bold text-2xl md:text-xl lg:text-4xl">{translations.greeting}</div> */}
             <Image src={MayoPatties} alt='Mayo Patties Icon' className='w-32'/>
             <motion.div 
               className="flex px-2 bg-red border-4 border-mayo rounded-3xl gap-2 items-center lg:border-[4px]"
@@ -57,13 +77,17 @@ export const Header = () => {
                   duration:0.5
                 }
               }}
-              
             >
                 <Menu className="h-10 w-10 md:hidden lg:hidden" onClick={()=>onClickMenu()}/>
                 <div className="text-xl font-bold hidden p-3 md:block lg:block lg:text-xl">
-                  <a href='#shop' className="mr-8">Shop</a>
-                  <a href='#footer' className="mr-8">Store</a>
-                  <button className="relative uppercase" onClick={() => onClickChooseLang()}>{lang}</button>
+                  <a href='#menus' className="mr-8 hover:text-yellow">Menu</a>
+                  <button className="relative uppercase" onClick={() => onClickChooseLang()}>
+                    <div className="flex flex-row gap-1 items-center hover:text-yellow">
+                      <Image src={lang === 'en' ? America : French} alt={lang} width={200} height={200} className="h-4 w-6 border-mayo border-[1px]" />
+                      {lang}
+                      <ChevronDown />
+                    </div>                  
+                  </button>
                   {choose && (
                     <motion.div 
                       className="absolute right-0 mt-2 bg-red text-mayo border-4 border-mayo rounded-3xl lg:border-[4px] shadow-lg"
@@ -72,9 +96,19 @@ export const Header = () => {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                     >
-                      <div className="flex flex-col items-start">
-                        <button disabled={lang === 'en'} onClick={()=>{lang === 'in' && onChooseLang('en')}} className={twMerge("lg:text-xl px-4 pt-1",lang === 'en' && "text-brown hover:none", lang !== 'en' && "hover:text-mayo/60")}>ENGLISH</button>
-                        <button disabled={lang === 'in'} onClick={()=>{lang === 'en' && onChooseLang('in')}} className={twMerge("lg:text-xl px-4 py-1",lang === 'in' && "text-brown hover:none", lang !== 'in' && "hover:text-mayo/60")}>INDONESIA</button>
+                      <div className="flex flex-col items-start p-1">
+                        <button disabled={lang === 'en'} onClick={()=>{lang === 'fren' && onChooseLang('en')}} className={twMerge("lg:text-xl px-4 pt-1",lang === 'en' && "text-brown hover:none", lang !== 'en' && "hover:text-yellow")}>
+                          <div className="flex flex-row gap-1 items-center">
+                            <Image src={America} alt="America Flag" width={200} height={200} className="h-4 w-6 border-mayo border-[1px]" />
+                            ENGLISH
+                          </div>
+                        </button>
+                        <button disabled={lang === 'fren'} onClick={()=>{lang === 'en' && onChooseLang('fren')}} className={twMerge("lg:text-xl px-4 py-1",lang === 'fren' && "text-brown hover:none", lang !== 'fren' && "hover:text-mayo/60")}>
+                          <div className="flex flex-row gap-1 items-center">
+                            <Image src={French} alt="French Flag" width={200} height={200} className="h-4 w-6 border-mayo border-[1px]" />
+                            FRENCH
+                          </div>
+                        </button>
                       </div>
                   </motion.div>
                   )}
@@ -91,10 +125,23 @@ export const Header = () => {
                       <Image src={Close} alt='Close Icon' className='h-10 w-10' onClick={()=>onClickMenu()}/>
                     </div>       
                     <nav className="flex flex-col gap-4 justify-center items-center text-center font-bold text-xl md:text-2xl lg:text-3xl">
-                      <a href="#shop" onClick={()=>onClickMenu()}>Shop</a>
-                      <a href="#footer" onClick={()=>onClickMenu()}>Store</a>
-                      {lang === 'in' && <button onClick={() => {changeLanguage('en'); onClickMenu()}}>EN</button>}
-                      {lang === 'en' && <button onClick={() => {changeLanguage('in'); onClickMenu()}}>IN</button>}
+                      <a href="#menus" onClick={()=>onClickMenu()}>Menus</a>
+                      {lang === 'fren' && (
+                        <button onClick={() => {changeLanguage('en'); onClickMenu()}}>
+                          <div className="flex flex-row gap-1 items-center">
+                            <Image src={America} alt="America Flag" width={200} height={200} className="h-4 w-6 border-mayo border-[1px]" />
+                            ENGLISH
+                          </div>
+                        </button>
+                      )}
+                      {lang === 'en' && (
+                        <button onClick={() => {changeLanguage('fren'); onClickMenu()}}>
+                            <div className="flex flex-row gap-1 items-center">
+                            <Image src={French} alt="French Flag" width={200} height={200} className="h-4 w-6 border-mayo border-[1px]" />
+                            FRENCH
+                          </div>
+                        </button>
+                      )}
                     </nav>
                   </motion.div>
                 )}
