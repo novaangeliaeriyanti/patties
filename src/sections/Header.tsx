@@ -67,7 +67,7 @@ export const Header = () => {
         >
             <Image src={MayoPatties} alt='Mayo Patties Icon' className='w-32'/>
             <motion.div 
-              className="flex px-2 bg-red border-4 border-mayo rounded-3xl gap-2 items-center lg:border-[4px]"
+              className={`flex px-2 bg-red border-4 border-mayo rounded-3xl gap-2 items-center lg:border-[4px] ${isScrolled ? 'bg-red transition-all duration-300 ease-in-out' : 'bg-red bg-opacity-70 transition-all duration-300 ease-in-out'}`}
               initial={{opacity:0, scale:0.8}}
               whileInView={{
                 opacity:1,
