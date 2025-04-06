@@ -60,7 +60,7 @@ export const Header = () => {
   return (
     <header className={`fixed z-50 w-full h-14 transition-all duration-30`}>
         <motion.div 
-          className={`flex justify-between items-center p-3 lg:px-20 ${isScrolled ? 'bg-red' : 'bg-transparent'} text-mayo`}
+          className={`flex justify-between items-center p-3 lg:px-20 ${isScrolled ? 'bg-red transition-all duration-300 ease-in-out' : 'bg-transparent transition-all duration-300 ease-in-out'} text-mayo`}
           initial={{y:"-100%", opacity:0}}
           animate={{y:"0%", opacity:1}}
           transition={{duration:0.8}}
